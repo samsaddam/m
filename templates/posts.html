@@ -1,0 +1,52 @@
+{% extends "base.html" %} {% block content %} {% load static %}
+
+<section class="content">
+  <section class="post_form">
+    <div class="first-post">
+      <img src="{% static 'img/twitter_PNG3.png' '%}" alt="" class="twitter_image">
+      <h1 class="heading">Home</h1>
+    </div>
+      <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="text" name="name" placeholder="Name" required>
+        <textarea name="body" placeholder="Tell us anything" required></textarea>
+        <input type="file" name="image">
+        <input type="submit" value="Tweet">
+      </form>
+  </section>
+  <section class="posts">
+       <ul>
+       {% for post in posts %} 
+       <li>
+        <img src="{% static 'img/MENU.png' %}" alt="" class="menu_icon js-menu-icon">
+        <div class="menu">
+          <a href="/delete/{{ post.id }}">Delete</a> <br>
+          <a href="/edit/{{ post.id }}">Edit</a>
+        </div>
+           <div class="logo">
+            <img src="../static/img/user.png" />
+          </div> 
+           <div class="name_body">
+            <div class="name">{{ post.name }}</div><br /> 
+           <div class="datetime">{{ post.created_at}}</div><br />
+           <p>{{ post.body }}</p><br />
+           {% if post.image.url %}
+           <img src="{{ post.image.url }}" width="100%" alt="" class="post-image">
+           <div class="like_count">
+            <a href="/like/{{post.id}}">
+              <img src="/static/img/heart.png" style="width: 30px"
+            /></a>
+            {{post.likecount}}
+          </div>
+           {% endif %}
+           </div>
+       </li> 
+       {% endfor %}
+       </ul>
+
+  </section>
+  <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+  <script src="{% static 'js/posts.js' %}"></script>
+</section>
+
+{% endblock %}

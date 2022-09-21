@@ -1,0 +1,128 @@
+/*
+Common
+*/
+body {
+      background-color: skyblue;
+}
+
+html, body {
+      height: 100%;
+}
+
+.content {
+      max-width: 40rem;
+      height: 100%;
+      margin: 0 auto;
+      border-left: 1px solid #ccc;
+      border-right: 1px solid #ccc;
+
+}
+/*
+Post
+*/
+
+.post_form {
+      padding: 20px 40px;
+      border-bottom: 1px solid #ccc;
+}
+
+.post_form input {
+      width: 70%;
+      margin-bottom: 10px;
+      padding: 10px;
+      border: 1px solid #ccc;
+}
+
+.post_form textarea {
+      width: 70%;
+      padding: 10px;
+      border: 1px solid #ccc;
+}
+
+.posts ul {
+      padding: 0;
+}
+
+.posts li {
+      display: flex;
+      border-bottom: 1px solid #ccc;
+      padding: 17px;
+}
+
+.posts li .logo {
+      flex-basis: 15%;
+}
+
+.posts li .logo img {
+      width: 60%;
+}
+
+.posts li .name_body {
+      flex-basis: 85%;
+}
+
+.posts li .name_body .name {
+      font-weight: bold;
+}
+
+.posts li .name_body .datetime {
+      color:blue;
+}
+
+@media screen  and (max-width: 500px) {
+      .posts li .name_body .name {
+            font-size: 20px;
+      }
+}
+img.twitter_image {
+      width: 10%;
+  }
+.posts li{
+      display: flex;
+      border-bottom: 1px solid #ccc;
+      padding: 20px 40px;
+      list-style: none;
+      position: relative;
+}
+.posts li .menu_icon{
+      width: 20px;
+      position:absolute;
+      top: 18px;
+      right:30px;
+}
+.posts li .menu{
+      display: none;
+      position: absolute;
+      top: 40px;
+      right: 15px;
+      border: 1px solid #ccc;
+      background-color: white;
+      padding: 10px 15px;
+      font-size: 13px;
+      border-radius: 3px;
+}
+.posts li .menu a{
+      text-decoration: none;
+}
+.posts li .logo{
+      flex-basis: 15%;
+}
+.posts li .logo img{
+      width: 60%;
+}
+.first-post {
+      display: flex;
+      /* border-bottom: 1px solid #ccc; */
+      /* padding: 0%; */
+  }
+  input[type="submit"] {
+      
+      width: 20%;
+      border-radius: 4px;
+  }
+  button {
+      padding: 2%;
+      width: 16%;
+      border: none;
+      border-radius: 6px;
+  }
